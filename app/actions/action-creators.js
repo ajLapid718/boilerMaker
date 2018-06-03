@@ -1,16 +1,16 @@
 // Action Naming and Action Creating Goes Here;
 
-const GET_EVERYTHING = "GET_EVERYTHING";
-const GET_ONE_THING = "GET_ONE_THING";
+export const GET_EVERYTHING = "GET_EVERYTHING";
+export const GET_ONE_THING = "GET_ONE_THING";
 
-function getEverything(everything) {
+export const getEverything = function(everything) {
   return {
     type: GET_EVERYTHING,
     payload: everything
   }
 };
 
-function getEverything(oneThing) {
+export const getOneThing = function(oneThing) {
   return {
     type: GET_ONE_THING,
     payload: oneThing

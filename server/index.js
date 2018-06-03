@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/api', require('./apiRouter'));
 
 app.get('*', function (req, res, next) {
-  res.sendFile(path.join(__dirname, './path/to/your/index.html'));
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 module.exports = app;

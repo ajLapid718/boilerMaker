@@ -15,3 +15,5 @@ app.use('/api', require('./apiRouter'));
 app.get('*', function (req, res, next) {
   res.sendFile(path.join(__dirname, './path/to/your/index.html'));
 });
+
+module.exports = app;

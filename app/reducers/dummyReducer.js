@@ -5,9 +5,13 @@ const initialState = {
   selectedItem: {}
 }
 
-// export function dummyReducer(state = [], action) {
-//   switch (action.type) {
-//     case GET_EVERYTHING:
-//       return
-//   }
-// }
+export function dummyReducer(state = initialState, action) {
+  switch (action.type) {
+    case GET_EVERYTHING:
+      return {...state, items: action.payload};
+    case GET_ONE_THING:
+      return {...state, selectedItem: action.payload};
+    default:
+      return state;
+  }
+}

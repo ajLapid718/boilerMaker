@@ -3,12 +3,19 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
 app.use(express.static(path.join(__dirname, './public/assets')));
 
 app.use(morgan('dev');)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(session({
+  secret: 'a wildly insecure secret',
+  resave: false,
+  saveUninitialized: false
+}));
 
 app.use('/api', require('./apiRouter'));
 

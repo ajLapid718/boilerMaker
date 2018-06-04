@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(session({
-  secret: 'a wildly insecure secret',
+  secret: process.env.SESSION_SCRET || 'a wildly insecure secret',
   resave: false,
   saveUninitialized: false
 }));
